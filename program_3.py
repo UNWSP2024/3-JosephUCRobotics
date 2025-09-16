@@ -1,3 +1,7 @@
+# Author: Joseph Kracht
+# Last Modified: 9/15/2025
+# Title: Age Categorizer
+
 # Programming Excersize 3-13
 
 # The Fast Freight Shipping Company charges the following rates:
@@ -11,15 +15,22 @@
 
 def weight_conversion(weight):
     # Calculate the shipping charge.
-    shippingCost = 0.0
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################
-    
+    if weight <= 2:
+        price_per_pound = 1.5
+    elif weight <= 6:
+        price_per_pound = 3
+    elif weight <= 10:
+        price_per_pound = 4
+    else:
+        price_per_pound = 4.75
+
+    shippingCost = weight*price_per_pound
+
     return shippingCost
 
+
 #### This piece of the code has been done for you,
-#### you only need to worry about the actual shipping 
+#### you only need to worry about the actual shipping
 #### charge logic in the weight_conversion function
 if __name__ == '__main__':
     # Local variables
@@ -29,4 +40,4 @@ if __name__ == '__main__':
     weight = float(input('Enter the weight of the package: '))
     # Display the shipping charge.
     shippingCost = weight_conversion(weight)
-    print ('Shipping charge: $', format(shippingCost, '.2f'))
+    print('Shipping charge: $', format(shippingCost, '.2f'))
